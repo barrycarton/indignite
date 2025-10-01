@@ -1,0 +1,113 @@
+name: Validate JSON
+
+on:
+  pull_request:
+    paths:
+      - 'data.json'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Validate JSON syntax
+        run: |
+          echo "Validating data.json..."
+          if ! python3 -m json.tool data.json > /dev/null; then
+            echo "❌ JSON syntax is invalid"
+            exit 1
+          fi
+          echo "✅ JSON syntax is valid"
+      
+      - name: Validate JSON structure
+        run: |
+          echo "Validating JSON structure..."
+          python3 << 'EOF'
+          import json
+          import sys
+
+          try:
+              with open('data.json', 'r', encoding='utf-8') as f:
+                  data = json.load(f)
+              
+              # Check if 'phrases' key exists
+              if 'phrases' not in data:
+                  print("❌ JSON must contain a 'phrases' key")
+                  sys.exit(1)
+              
+              # Check if 'phrases' is a list
+              if not isinstance(data['phrases'], list):
+                  print("❌ 'phrases' must be an array")
+                  sys.exit(1)
+              
+              # Check if list is not empty
+              if len(data['phrases']) == 0:
+                  print("❌ 'phrases' array must contain at least one phrase")
+                  sys.exit(1)
+              
+              # Check each phrase object
+              for i, phrase in enumerate(data['phrases']):
+                  # Support both string format (legacy) and object format (new)
+                  if isinstance(phrase, str):
+                      # Legacy format: just check if string is not empty
+                      if not phrase.strip():
+                          print(f"❌ Phrase at index {i} is empty")
+                          sys.exit(1)
+                  elif isinstance(phrase, dict):
+                      # New object format: validate required fields
+                      if 'text' not in phrase:
+                          print(f"❌ Phrase at index {i} must have a 'text' field")
+                          sys.exit(1)
+                      
+                      if not isinstance(phrase['text'], str):
+                          print(f"❌ 'text' field at index {i} must be a string")
+                          sys.exit(1)
+                      
+                      if not phrase['text'].strip():
+                          print(f"❌ 'text' field at index {i} is empty")
+                          sys.exit(1)
+                      
+                      # Validate optional 'description' field
+                      if 'description' in phrase:
+                          if not isinstance(phrase['description'], str):
+                              print(f"❌ 'description' field at index {i} must be a string")
+                              sys.exit(1)
+                      
+                      # Validate optional 'sound' field
+                      if 'sound' in phrase:
+                          if not isinstance(phrase['sound'], str):
+                              print(f"❌ 'sound' field at index {i} must be a string")
+                              sys.exit(1)
+                          if not phrase['sound'].strip():
+                              print(f"❌ 'sound' field at index {i} is empty")
+                              sys.exit(1)
+                  else:
+                      print(f"❌ Phrase at index {i} must be a string or object")
+                      sys.exit(1)
+              
+              # Check for duplicate texts
+              texts = []
+              for phrase in data['phrases']:
+                  if isinstance(phrase, str):
+                      texts.append(phrase)
+                  elif isinstance(phrase, dict) and 'text' in phrase:
+                      texts.append(phrase['text'])
+              
+              unique_texts = set(texts)
+              if len(unique_texts) != len(texts):
+                  print("⚠️  Warning: Duplicate phrase texts detected")
+              
+              print(f"✅ JSON structure is valid ({len(data['phrases'])} phrases)")
+              
+          except Exception as e:
+              print(f"❌ Error validating JSON: {e}")
+              sys.exit(1)
+          EOF
+      
+      - name: Success message
+        run: |
+          echo "🎉 All validation checks passed!"
+          echo "Thank you for contributing to indignite!"

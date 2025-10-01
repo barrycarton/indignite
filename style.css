@@ -1,0 +1,369 @@
+/* Swiss Minimalist Design */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+    padding: 3rem 1rem 2rem;
+    background-color: #fff;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+    color: #000;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: #666;
+    font-weight: 300;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.subtitle a {
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px solid #000;
+}
+
+.subtitle a:hover {
+    opacity: 0.7;
+}
+
+main {
+    flex: 1;
+    padding: 2rem 1rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.bingo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin: 0 auto;
+}
+
+.bingo-card {
+    background-color: #fff;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 2px solid #000;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: visible;
+}
+
+.bingo-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('images/6902836893_1d499713fe_c.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    z-index: 0;
+}
+
+.bingo-card:hover::before {
+    opacity: 0.7;
+}
+
+.bingo-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.bingo-card:hover .bingo-card-text {
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    z-index: 1;
+}
+
+.bingo-card:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    background-color: #fff;
+    color: #000;
+}
+
+.bingo-card.clicked {
+    background-color: #000;
+    color: #fff;
+}
+
+.bingo-card-text {
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.4;
+    word-wrap: break-word;
+    hyphens: auto;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+/* Dynamically adjust font size for long text */
+.bingo-card-text.small {
+    font-size: 0.9rem;
+}
+
+.bingo-card-text.smaller {
+    font-size: 0.75rem;
+}
+
+/* Tooltip styling */
+.tooltip {
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+    width: 24px;
+    height: 24px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: help;
+    z-index: 10;
+    transition: all 0.2s ease;
+}
+
+.tooltip:hover {
+    transform: scale(1.1);
+}
+
+.tooltip-content {
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    margin-bottom: 10px;
+    padding: 0.75rem;
+    background-color: #000;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: normal;
+    line-height: 1.4;
+    white-space: normal;
+    width: 250px;
+    max-width: 80vw;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+    pointer-events: none;
+    text-align: left;
+    z-index: 100;
+}
+
+.tooltip:hover .tooltip-content {
+    opacity: 1;
+    visibility: visible;
+}
+
+.tooltip-content::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    right: 10px;
+    border: 6px solid transparent;
+    border-top-color: #000;
+}
+
+/* Markdown formatting in tooltip */
+.tooltip-content strong {
+    font-weight: 700;
+    color: #fff;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: #fff;
+    border-top: 1px solid #e0e0e0;
+    margin-top: 2rem;
+}
+
+footer p {
+    margin: 0.5rem 0;
+    color: #666;
+}
+
+footer a {
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px solid #000;
+}
+
+footer a:hover {
+    opacity: 0.7;
+}
+
+/* Confetti animation */
+.confetti {
+    position: fixed;
+    font-size: 2rem;
+    pointer-events: none;
+    z-index: 1000;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Credits page */
+.credits-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fff;
+    border: 2px solid #000;
+}
+
+.credits-container h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.credits-container h2:first-child {
+    margin-top: 0;
+}
+
+.credits-container p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.credits-container ul {
+    list-style: disc;
+    margin-left: 2rem;
+    line-height: 1.8;
+}
+
+.credits-container a {
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px solid #000;
+}
+
+.credits-container a:hover {
+    opacity: 0.7;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .bingo-grid {
+        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+        gap: 0.75rem;
+    }
+    
+    .bingo-card {
+        padding: 0.75rem;
+    }
+    
+    .bingo-card-text {
+        font-size: 1rem;
+    }
+    
+    .bingo-card-text.small {
+        font-size: 0.85rem;
+    }
+    
+    .bingo-card-text.smaller {
+        font-size: 0.7rem;
+    }
+    
+    .tooltip-content {
+        width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 2rem 1rem 1.5rem;
+    }
+    
+    h1 {
+        font-size: 1.75rem;
+    }
+    
+    .bingo-grid {
+        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+        gap: 0.5rem;
+    }
+    
+    .bingo-card {
+        padding: 0.5rem;
+    }
+    
+    .bingo-card-text {
+        font-size: 0.9rem;
+    }
+    
+    .bingo-card-text.small {
+        font-size: 0.75rem;
+    }
+    
+    .bingo-card-text.smaller {
+        font-size: 0.65rem;
+    }
+    
+    .tooltip {
+        width: 20px;
+        height: 20px;
+        font-size: 0.7rem;
+    }
+    
+    .tooltip-content {
+        width: 180px;
+        font-size: 0.8rem;
+    }
+}

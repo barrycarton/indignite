@@ -1,0 +1,84 @@
+{
+  "phrases": [
+    {
+      "text": "Justice politisée !",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "sound": "sounds/indignite.mp3"
+    },
+    {
+      "text": "Peine inhumaine !",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "sound": "sounds/indignite.mp3"
+    },
+    {
+      "text": "Présomption d'innocence bafouée !",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "sound": "sounds/indignite.mp3"
+    },
+    {
+      "text": "Revanche des toges rouges !",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "sound": "sounds/indignite.mp3"
+    },
+    {
+      "text": "Grâce pour la République !",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "sound": "sounds/indignite.mp3"
+    },
+    {
+      "text": "Sarko, icône intouchable !",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "sound": "sounds/indignite.mp3"
+    },
+    {
+      "text": "Égalité ? Quelle blague !" ,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "sound": "sounds/indignite.mp3"
+    },
+    {
+      "text": "Carla en pleurs",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "sound": "sounds/indignite.mp3"
+    },
+    {
+      "text": "Louis en sanglots",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "sound": "sounds/indignite.mp3"
+    },
+    {
+      "text": "Pascal Praud outré !",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "sound": "sounds/indignite.mp3"
+    },
+    {
+      "text": "Carla sort la guitare",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "sound": "sounds/indignite.mp3"
+    },
+    {
+      "text": "Sarko faussement humble",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "sound": "sounds/indignite.mp3"
+    },
+    {
+      "text": "Il a tant fait pour la france !",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "sound": "sounds/indignite.mp3"
+    },
+    {
+      "text": "On en veut à la France qui gagne !",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "sound": "sounds/indignite.mp3"
+    },
+    {
+      "text": "Revanche des incapables",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "sound": "sounds/indignite.mp3"
+    },
+    {
+      "text": "Si on en est là, c'est parce que Nicolas Sarkozy a perdu",
+      "description": "Eric Ciotti le 4 sept 2024 sur Europe 1",
+      "sound": "sounds/indignite.mp3"
+    }
+  ]
+}
