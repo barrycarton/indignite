@@ -61,7 +61,7 @@
       "sound": "sounds/indignite.mp3"
     },
     {
-      "text": "Il a tant fait pour la france !",
+      "text": "Il a tant fait pour la France !",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "sound": "sounds/indignite.mp3"
     },
@@ -76,8 +76,23 @@
       "sound": "sounds/indignite.mp3"
     },
     {
+      "text": "Ils ont humilié la France !",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "sound": "sounds/indignite.mp3"
+    },
+    {
+      "text": "Politisation de la justice !",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "sound": "sounds/indignite.mp3"
+    },
+    {
+      "text": "La tête haute !",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "sound": "sounds/indignite.mp3"
+    },
+    {
       "text": "Si on en est là, c'est parce que Nicolas Sarkozy a perdu",
-      "description": "Eric Ciotti le 4 sept 2024 sur Europe 1",
+      "description": "Eric Ciotti le 4 sept 2024 sur Europe 1. Il est certain que s'il avait gagné il ne dormirait pas en prison. Ciotti a raison.",
       "sound": "sounds/indignite.mp3"
     }
   ]
