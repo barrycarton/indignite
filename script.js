@@ -12,10 +12,26 @@ fetch('data.json')
         console.error('Error loading data:', error);
         // Fallback phrases if JSON fails to load
         allPhrases = [
-            'Justice pour tous',
-            'Égalité devant la loi',
-            'Service public',
-            'Transparence'
+            {
+                text: 'Justice pour tous',
+                description: 'Principe fondamental garantissant l\'égalité devant la justice.',
+                sound: 'sounds/indignite.mp3'
+            },
+            {
+                text: 'Égalité devant la loi',
+                description: 'Tous les citoyens sont égaux face à la loi.',
+                sound: 'sounds/indignite.mp3'
+            },
+            {
+                text: 'Service public',
+                description: 'Organisation assurant une mission d\'intérêt général.',
+                sound: 'sounds/indignite.mp3'
+            },
+            {
+                text: 'Transparence',
+                description: 'Clarté et accessibilité de l\'information publique.',
+                sound: 'sounds/indignite.mp3'
+            }
         ];
         initializeBingoGrid();
     });
@@ -32,30 +48,61 @@ function initializeBingoGrid() {
     }
 }
 
+// Parse simple markdown (bold **text**)
+function parseMarkdown(text) {
+    return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+}
+
 // Create a single bingo card
-function createBingoCard(phrase) {
+function createBingoCard(phraseObj) {
     const card = document.createElement('div');
     card.className = 'bingo-card';
     
-    const text = document.createElement('div');
-    text.className = 'bingo-card-text';
-    text.textContent = phrase;
+    // Get text and determine font size based on length
+    const text = phraseObj.text || phraseObj;
+    const textLength = typeof text === 'string' ? text.length : 0;
     
-    card.appendChild(text);
+    const textDiv = document.createElement('div');
+    textDiv.className = 'bingo-card-text';
+    textDiv.textContent = text;
     
-    // Add click event
-    card.addEventListener('click', () => handleCardClick(card));
+    // Adjust font size based on text length
+    if (textLength > 30) {
+        textDiv.classList.add('smaller');
+    } else if (textLength > 20) {
+        textDiv.classList.add('small');
+    }
+    
+    card.appendChild(textDiv);
+    
+    // Add tooltip if description exists
+    if (phraseObj.description) {
+        const tooltip = document.createElement('div');
+        tooltip.className = 'tooltip';
+        tooltip.textContent = 'i';
+        
+        const tooltipContent = document.createElement('div');
+        tooltipContent.className = 'tooltip-content';
+        tooltipContent.innerHTML = parseMarkdown(phraseObj.description);
+        
+        tooltip.appendChild(tooltipContent);
+        card.appendChild(tooltip);
+    }
+    
+    // Add click event with sound file reference
+    const soundFile = phraseObj.sound || 'sounds/indignite.mp3';
+    card.addEventListener('click', () => handleCardClick(card, soundFile));
     
     return card;
 }
 
 // Handle card click
-function handleCardClick(card) {
+function handleCardClick(card, soundFile) {
     // Toggle clicked state
     card.classList.add('clicked');
     
-    // Play sound
-    playSound();
+    // Play sound (try to load from file, fallback to Web Audio API)
+    playSound(soundFile);
     
     // Trigger confetti
     triggerConfetti(card);
@@ -66,8 +113,21 @@ function handleCardClick(card) {
     }, 300);
 }
 
-// Play a simple sound using Web Audio API
-function playSound() {
+// Play sound - try to load file, fallback to Web Audio API
+function playSound(soundFile) {
+    // Try to play the sound file
+    const audio = new Audio(soundFile);
+    audio.volume = 0.3;
+    
+    audio.play().catch(error => {
+        // Fallback to Web Audio API if file doesn't exist or can't play
+        console.log('Using fallback audio:', error);
+        playFallbackSound();
+    });
+}
+
+// Play a simple sound using Web Audio API (fallback)
+function playFallbackSound() {
     try {
         const audioContext = new (window.AudioContext || window.webkitAudioContext)();
         const oscillator = audioContext.createOscillator();

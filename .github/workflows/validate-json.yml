@@ -48,21 +48,57 @@ jobs:
                   print("❌ 'phrases' array must contain at least one phrase")
                   sys.exit(1)
               
-              # Check if all phrases are strings
+              # Check each phrase object
               for i, phrase in enumerate(data['phrases']):
-                  if not isinstance(phrase, str):
-                      print(f"❌ Phrase at index {i} must be a string")
-                      sys.exit(1)
-                  
-                  # Check if phrase is not empty
-                  if not phrase.strip():
-                      print(f"❌ Phrase at index {i} is empty")
+                  # Support both string format (legacy) and object format (new)
+                  if isinstance(phrase, str):
+                      # Legacy format: just check if string is not empty
+                      if not phrase.strip():
+                          print(f"❌ Phrase at index {i} is empty")
+                          sys.exit(1)
+                  elif isinstance(phrase, dict):
+                      # New object format: validate required fields
+                      if 'text' not in phrase:
+                          print(f"❌ Phrase at index {i} must have a 'text' field")
+                          sys.exit(1)
+                      
+                      if not isinstance(phrase['text'], str):
+                          print(f"❌ 'text' field at index {i} must be a string")
+                          sys.exit(1)
+                      
+                      if not phrase['text'].strip():
+                          print(f"❌ 'text' field at index {i} is empty")
+                          sys.exit(1)
+                      
+                      # Validate optional 'description' field
+                      if 'description' in phrase:
+                          if not isinstance(phrase['description'], str):
+                              print(f"❌ 'description' field at index {i} must be a string")
+                              sys.exit(1)
+                      
+                      # Validate optional 'sound' field
+                      if 'sound' in phrase:
+                          if not isinstance(phrase['sound'], str):
+                              print(f"❌ 'sound' field at index {i} must be a string")
+                              sys.exit(1)
+                          if not phrase['sound'].strip():
+                              print(f"❌ 'sound' field at index {i} is empty")
+                              sys.exit(1)
+                  else:
+                      print(f"❌ Phrase at index {i} must be a string or object")
                       sys.exit(1)
               
-              # Check for duplicates
-              unique_phrases = set(data['phrases'])
-              if len(unique_phrases) != len(data['phrases']):
-                  print("⚠️  Warning: Duplicate phrases detected")
+              # Check for duplicate texts
+              texts = []
+              for phrase in data['phrases']:
+                  if isinstance(phrase, str):
+                      texts.append(phrase)
+                  elif isinstance(phrase, dict) and 'text' in phrase:
+                      texts.append(phrase['text'])
+              
+              unique_texts = set(texts)
+              if len(unique_texts) != len(texts):
+                  print("⚠️  Warning: Duplicate phrase texts detected")
               
               print(f"✅ JSON structure is valid ({len(data['phrases'])} phrases)")
               

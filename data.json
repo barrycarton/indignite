@@ -1,28 +1,124 @@
 {
   "phrases": [
-    "Justice pour tous",
-    "Égalité devant la loi",
-    "Liberté d'expression",
-    "Droits de l'homme",
-    "Service public",
-    "Transparence",
-    "Démocratie participative",
-    "Solidarité nationale",
-    "Indépendance judiciaire",
-    "État de droit",
-    "Protection sociale",
-    "Éducation gratuite",
-    "Santé publique",
-    "Neutralité du service",
-    "Continuité du service",
-    "Égalité d'accès",
-    "Laïcité",
-    "Intérêt général",
-    "Responsabilité publique",
-    "Contrôle démocratique",
-    "Accès au droit",
-    "Présomption d'innocence",
-    "Dignité humaine",
-    "Séparation des pouvoirs"
+    {
+      "text": "Justice pour tous",
+      "description": "Principe fondamental garantissant l'**égalité** devant la justice.",
+      "sound": "sounds/indignite.mp3"
+    },
+    {
+      "text": "Égalité devant la loi",
+      "description": "Tous les citoyens sont égaux face à la **loi**, sans discrimination.",
+      "sound": "sounds/indignite.mp3"
+    },
+    {
+      "text": "Liberté d'expression",
+      "description": "Droit fondamental de s'exprimer librement dans le respect des lois.",
+      "sound": "sounds/indignite.mp3"
+    },
+    {
+      "text": "Droits de l'homme",
+      "description": "Droits universels et inaliénables de chaque être humain.",
+      "sound": "sounds/indignite.mp3"
+    },
+    {
+      "text": "Service public",
+      "description": "Organisation assurant une mission d'**intérêt général** pour tous.",
+      "sound": "sounds/indignite.mp3"
+    },
+    {
+      "text": "Transparence",
+      "description": "Clarté et accessibilité de l'information publique pour tous les citoyens.",
+      "sound": "sounds/indignite.mp3"
+    },
+    {
+      "text": "Démocratie participative",
+      "description": "Implication directe des citoyens dans les décisions publiques.",
+      "sound": "sounds/indignite.mp3"
+    },
+    {
+      "text": "Solidarité nationale",
+      "description": "Principe d'entraide et de soutien mutuel entre tous les citoyens.",
+      "sound": "sounds/indignite.mp3"
+    },
+    {
+      "text": "Indépendance judiciaire",
+      "description": "Les juges rendent la justice sans pression ni influence extérieure.",
+      "sound": "sounds/indignite.mp3"
+    },
+    {
+      "text": "État de droit",
+      "description": "Soumission de tous les pouvoirs à des règles de droit.",
+      "sound": "sounds/indignite.mp3"
+    },
+    {
+      "text": "Protection sociale",
+      "description": "Ensemble des mécanismes de prévoyance collective.",
+      "sound": "sounds/indignite.mp3"
+    },
+    {
+      "text": "Éducation gratuite",
+      "description": "Accès libre et gratuit à l'enseignement pour tous.",
+      "sound": "sounds/indignite.mp3"
+    },
+    {
+      "text": "Santé publique",
+      "description": "Organisation des soins de santé accessibles à tous.",
+      "sound": "sounds/indignite.mp3"
+    },
+    {
+      "text": "Neutralité du service",
+      "description": "Le service public traite tous les usagers de manière **impartiale**.",
+      "sound": "sounds/indignite.mp3"
+    },
+    {
+      "text": "Continuité du service",
+      "description": "Le service public fonctionne sans interruption.",
+      "sound": "sounds/indignite.mp3"
+    },
+    {
+      "text": "Égalité d'accès",
+      "description": "Tous les citoyens peuvent accéder aux services publics.",
+      "sound": "sounds/indignite.mp3"
+    },
+    {
+      "text": "Laïcité",
+      "description": "Séparation entre l'État et les organisations religieuses.",
+      "sound": "sounds/indignite.mp3"
+    },
+    {
+      "text": "Intérêt général",
+      "description": "Ce qui bénéficie à l'ensemble de la société.",
+      "sound": "sounds/indignite.mp3"
+    },
+    {
+      "text": "Responsabilité publique",
+      "description": "L'État répond de ses actes devant les citoyens.",
+      "sound": "sounds/indignite.mp3"
+    },
+    {
+      "text": "Contrôle démocratique",
+      "description": "Surveillance citoyenne de l'action publique.",
+      "sound": "sounds/indignite.mp3"
+    },
+    {
+      "text": "Accès au droit",
+      "description": "Possibilité pour tous de connaître et faire valoir ses droits.",
+      "sound": "sounds/indignite.mp3"
+    },
+    {
+      "text": "Présomption d'innocence",
+      "description": "Toute personne est présumée innocente jusqu'à preuve du contraire.",
+      "sound": "sounds/indignite.mp3"
+    },
+    {
+      "text": "Dignité humaine",
+      "description": "Respect inconditionnel de la valeur de chaque personne.",
+      "sound": "sounds/indignite.mp3"
+    },
+    {
+      "text": "Séparation des pouvoirs",
+      "description": "Division des pouvoirs législatif, exécutif et judiciaire.",
+      "sound": "sounds/indignite.mp3"
+    }
   ]
 }

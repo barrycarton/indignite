@@ -54,22 +54,27 @@ main {
 .bingo-card {
     background-color: #fff;
     border: 2px solid #000;
-    padding: 2rem 1rem;
+    padding: 1rem;
     text-align: center;
     cursor: pointer;
     transition: all 0.2s ease;
-    min-height: 150px;
+    aspect-ratio: 1 / 1;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .bingo-card:hover {
     background-color: #f9f9f9;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.bingo-card:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
 }
 
 .bingo-card.clicked {
@@ -83,6 +88,83 @@ main {
     line-height: 1.4;
     word-wrap: break-word;
     hyphens: auto;
+    width: 100%;
+}
+
+/* Dynamically adjust font size for long text */
+.bingo-card-text.small {
+    font-size: 0.9rem;
+}
+
+.bingo-card-text.smaller {
+    font-size: 0.75rem;
+}
+
+/* Tooltip styling */
+.tooltip {
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+    width: 24px;
+    height: 24px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: help;
+    z-index: 10;
+    transition: all 0.2s ease;
+}
+
+.tooltip:hover {
+    transform: scale(1.1);
+}
+
+.tooltip-content {
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    margin-bottom: 10px;
+    padding: 0.75rem;
+    background-color: #000;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: normal;
+    line-height: 1.4;
+    white-space: normal;
+    width: 250px;
+    max-width: 80vw;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+    pointer-events: none;
+    text-align: left;
+    z-index: 100;
+}
+
+.tooltip:hover .tooltip-content {
+    opacity: 1;
+    visibility: visible;
+}
+
+.tooltip-content::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    right: 10px;
+    border: 6px solid transparent;
+    border-top-color: #000;
+}
+
+/* Markdown formatting in tooltip */
+.tooltip-content strong {
+    font-weight: 700;
+    color: #fff;
 }
 
 footer {
@@ -137,12 +219,23 @@ footer a:hover {
     }
     
     .bingo-card {
-        padding: 1.5rem 0.75rem;
-        min-height: 120px;
+        padding: 0.75rem;
     }
     
     .bingo-card-text {
         font-size: 1rem;
+    }
+    
+    .bingo-card-text.small {
+        font-size: 0.85rem;
+    }
+    
+    .bingo-card-text.smaller {
+        font-size: 0.7rem;
+    }
+    
+    .tooltip-content {
+        width: 200px;
     }
 }
 
@@ -161,11 +254,29 @@ footer a:hover {
     }
     
     .bingo-card {
-        padding: 1rem 0.5rem;
-        min-height: 100px;
+        padding: 0.5rem;
     }
     
     .bingo-card-text {
         font-size: 0.9rem;
+    }
+    
+    .bingo-card-text.small {
+        font-size: 0.75rem;
+    }
+    
+    .bingo-card-text.smaller {
+        font-size: 0.65rem;
+    }
+    
+    .tooltip {
+        width: 20px;
+        height: 20px;
+        font-size: 0.7rem;
+    }
+    
+    .tooltip-content {
+        width: 180px;
+        font-size: 0.8rem;
     }
 }
