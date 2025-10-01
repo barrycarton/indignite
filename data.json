@@ -59,6 +59,22 @@
       "text": "Sarko faussement humble",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "sound": "sounds/indignite.mp3"
+    },
+    {
+      "text": "Il a tant fait pour la france !",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "sound": "sounds/indignite.mp3"
+    },
+    {
+      "text": "On en veut à la France qui gagne !",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "sound": "sounds/indignite.mp3"
+    },
+    {
+      "text": "Revanche des incapables",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "sound": "sounds/indignite.mp3"
     }
+  ]
   ]
 }
