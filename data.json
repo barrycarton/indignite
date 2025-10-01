@@ -1,123 +1,63 @@
 {
   "phrases": [
     {
-      "text": "Justice pour tous",
-      "description": "Principe fondamental garantissant l'**égalité** devant la justice.",
+      "text": "Justice politisée !",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "sound": "sounds/indignite.mp3"
     },
     {
-      "text": "Égalité devant la loi",
-      "description": "Tous les citoyens sont égaux face à la **loi**, sans discrimination.",
+      "text": "Peine inhumaine !",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "sound": "sounds/indignite.mp3"
     },
     {
-      "text": "Liberté d'expression",
-      "description": "Droit fondamental de s'exprimer librement dans le respect des lois.",
+      "text": "Présomption d'innocence bafouée !",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "sound": "sounds/indignite.mp3"
     },
     {
-      "text": "Droits de l'homme",
-      "description": "Droits universels et inaliénables de chaque être humain.",
+      "text": "Revanche des toges rouges !",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "sound": "sounds/indignite.mp3"
     },
     {
-      "text": "Service public",
-      "description": "Organisation assurant une mission d'**intérêt général** pour tous.",
+      "text": "Grâce pour la République !",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "sound": "sounds/indignite.mp3"
     },
     {
-      "text": "Transparence",
-      "description": "Clarté et accessibilité de l'information publique pour tous les citoyens.",
+      "text": "Sarko, icône intouchable !",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "sound": "sounds/indignite.mp3"
     },
     {
-      "text": "Démocratie participative",
-      "description": "Implication directe des citoyens dans les décisions publiques.",
+      "text": "Égalité ? Quelle blague !" ,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "sound": "sounds/indignite.mp3"
     },
     {
-      "text": "Solidarité nationale",
-      "description": "Principe d'entraide et de soutien mutuel entre tous les citoyens.",
+      "text": "Carla en pleurs",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "sound": "sounds/indignite.mp3"
     },
     {
-      "text": "Indépendance judiciaire",
-      "description": "Les juges rendent la justice sans pression ni influence extérieure.",
+      "text": "Louis en sanglots",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "sound": "sounds/indignite.mp3"
     },
     {
-      "text": "État de droit",
-      "description": "Soumission de tous les pouvoirs à des règles de droit.",
+      "text": "Pascal Praud outré !",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "sound": "sounds/indignite.mp3"
     },
     {
-      "text": "Protection sociale",
-      "description": "Ensemble des mécanismes de prévoyance collective.",
+      "text": "Carla sort la guitare",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "sound": "sounds/indignite.mp3"
     },
     {
-      "text": "Éducation gratuite",
-      "description": "Accès libre et gratuit à l'enseignement pour tous.",
-      "sound": "sounds/indignite.mp3"
-    },
-    {
-      "text": "Santé publique",
-      "description": "Organisation des soins de santé accessibles à tous.",
-      "sound": "sounds/indignite.mp3"
-    },
-    {
-      "text": "Neutralité du service",
-      "description": "Le service public traite tous les usagers de manière **impartiale**.",
-      "sound": "sounds/indignite.mp3"
-    },
-    {
-      "text": "Continuité du service",
-      "description": "Le service public fonctionne sans interruption.",
-      "sound": "sounds/indignite.mp3"
-    },
-    {
-      "text": "Égalité d'accès",
-      "description": "Tous les citoyens peuvent accéder aux services publics.",
-      "sound": "sounds/indignite.mp3"
-    },
-    {
-      "text": "Laïcité",
-      "description": "Séparation entre l'État et les organisations religieuses.",
-      "sound": "sounds/indignite.mp3"
-    },
-    {
-      "text": "Intérêt général",
-      "description": "Ce qui bénéficie à l'ensemble de la société.",
-      "sound": "sounds/indignite.mp3"
-    },
-    {
-      "text": "Responsabilité publique",
-      "description": "L'État répond de ses actes devant les citoyens.",
-      "sound": "sounds/indignite.mp3"
-    },
-    {
-      "text": "Contrôle démocratique",
-      "description": "Surveillance citoyenne de l'action publique.",
-      "sound": "sounds/indignite.mp3"
-    },
-    {
-      "text": "Accès au droit",
-      "description": "Possibilité pour tous de connaître et faire valoir ses droits.",
-      "sound": "sounds/indignite.mp3"
-    },
-    {
-      "text": "Présomption d'innocence",
-      "description": "Toute personne est présumée innocente jusqu'à preuve du contraire.",
-      "sound": "sounds/indignite.mp3"
-    },
-    {
-      "text": "Dignité humaine",
-      "description": "Respect inconditionnel de la valeur de chaque personne.",
-      "sound": "sounds/indignite.mp3"
-    },
-    {
-      "text": "Séparation des pouvoirs",
-      "description": "Division des pouvoirs législatif, exécutif et judiciaire.",
+      "text": "Sarko faussement humble",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "sound": "sounds/indignite.mp3"
     }
   ]
