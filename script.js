@@ -150,12 +150,68 @@ function playFallbackSound() {
     }
 }
 
-// Trigger confetti explosion with female judge emoji
+// Trigger confetti explosion using canvas-confetti library
 function triggerConfetti(card) {
     const rect = card.getBoundingClientRect();
+    const centerX = (rect.left + rect.width / 2) / window.innerWidth;
+    const centerY = (rect.top + rect.height / 2) / window.innerHeight;
+    
+    // Use canvas-confetti library for explosive effect
+    if (typeof confetti !== 'undefined') {
+        // Create explosion effect from the card position
+        confetti({
+            particleCount: 100,
+            spread: 160,
+            origin: { x: centerX, y: centerY },
+            startVelocity: 45,
+            gravity: 1.2,
+            ticks: 200,
+            colors: ['#FFD700', '#FFA500', '#FF6347', '#FF1493', '#9370DB'],
+            shapes: ['circle', 'square'],
+            scalar: 1.2
+        });
+        
+        // Add emoji confetti
+        const count = 20;
+        const defaults = {
+            origin: { x: centerX, y: centerY },
+            startVelocity: 35,
+            gravity: 1,
+            ticks: 150
+        };
+        
+        function fire(particleRatio, opts) {
+            confetti({
+                ...defaults,
+                ...opts,
+                particleCount: Math.floor(count * particleRatio),
+                scalar: 2
+            });
+        }
+        
+        // Fire emoji confetti with different speeds
+        fire(0.5, {
+            spread: 120,
+            startVelocity: 45,
+        });
+        fire(0.3, {
+            spread: 90,
+            startVelocity: 55,
+        });
+        fire(0.2, {
+            spread: 150,
+            startVelocity: 35,
+        });
+    } else {
+        // Fallback to original emoji confetti
+        fallbackEmojiConfetti(rect);
+    }
+}
+
+// Fallback emoji confetti (original implementation)
+function fallbackEmojiConfetti(rect) {
     const centerX = rect.left + rect.width / 2;
     const centerY = rect.top + rect.height / 2;
-    
     const confettiCount = 20;
     
     for (let i = 0; i < confettiCount; i++) {

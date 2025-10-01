@@ -34,6 +34,20 @@ h1 {
     font-size: 1rem;
     color: #666;
     font-weight: 300;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.subtitle a {
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px solid #000;
+}
+
+.subtitle a:hover {
+    opacity: 0.7;
 }
 
 main {
@@ -46,13 +60,16 @@ main {
 
 .bingo-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 1rem;
     margin: 0 auto;
 }
 
 .bingo-card {
     background-color: #fff;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     border: 2px solid #000;
     padding: 1rem;
     text-align: center;
@@ -66,15 +83,41 @@ main {
     overflow: visible;
 }
 
+.bingo-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('images/6902836893_1d499713fe_c.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    z-index: 0;
+}
+
+.bingo-card:hover::before {
+    opacity: 0.7;
+}
+
 .bingo-card:hover {
-    background-color: #f9f9f9;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.bingo-card:hover .bingo-card-text {
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    z-index: 1;
 }
 
 .bingo-card:hover .tooltip {
     opacity: 1;
     visibility: visible;
+    background-color: #fff;
+    color: #000;
 }
 
 .bingo-card.clicked {
@@ -89,6 +132,9 @@ main {
     word-wrap: break-word;
     hyphens: auto;
     width: 100%;
+    position: relative;
+    z-index: 1;
+    transition: color 0.2s ease, text-shadow 0.2s ease;
 }
 
 /* Dynamically adjust font size for long text */
@@ -207,6 +253,47 @@ footer a:hover {
     }
 }
 
+/* Credits page */
+.credits-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fff;
+    border: 2px solid #000;
+}
+
+.credits-container h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.credits-container h2:first-child {
+    margin-top: 0;
+}
+
+.credits-container p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.credits-container ul {
+    list-style: disc;
+    margin-left: 2rem;
+    line-height: 1.8;
+}
+
+.credits-container a {
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px solid #000;
+}
+
+.credits-container a:hover {
+    opacity: 0.7;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
     h1 {
@@ -214,7 +301,7 @@ footer a:hover {
     }
     
     .bingo-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
         gap: 0.75rem;
     }
     
@@ -249,7 +336,7 @@ footer a:hover {
     }
     
     .bingo-grid {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
         gap: 0.5rem;
     }
     
