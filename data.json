@@ -74,6 +74,11 @@
       "text": "Revanche des incapables",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "sound": "sounds/indignite.mp3"
+    },
+    {
+      "text": "Si on en est là, c'est parce que Nicolas Sarkozy a perdu",
+      "description": "Eric Ciotti le 4 sept 2024 sur Europe 1",
+      "sound": "sounds/indignite.mp3"
     }
   ]
 }
